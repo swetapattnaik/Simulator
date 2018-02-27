@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.opensmpp</groupId>
+		<artifactId>opensmpp-parent</artifactId>
+		<version>3.0.2-SNAPSHOT</version>
+	</parent>
+	<artifactId>opensmpp-sim</artifactId>
+	<packaging>jar</packaging>
+	<name>OpenSMPP Simulator</name>
+
+	<properties>
+		<app.mainClass>org.smpp.smscsim.Simulator</app.mainClass>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>opensmpp-core</artifactId>
+		</dependency>
+		
+
+<!-- https://mvnrepository.com/artifact/org.opensmpp/opensmpp-charset -->
+<dependency>
+    <groupId>org.opensmpp</groupId>
+    <artifactId>opensmpp-charset</artifactId>
+<version>3.0.2-SNAPSHOT</version>
+</dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpasyncclient -->
+<dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpasyncclient</artifactId>
+    <version>4.1</version>
+</dependency>
+<!-- Mongo Java Driver -->
+	<dependency>
+		<groupId>org.mongodb</groupId>
+		<artifactId>mongo-java-driver</artifactId>
+		<version>2.10.1</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.mongodb.morphia/morphia -->
+<dependency>
+    <groupId>org.mongodb.morphia</groupId>
+    <artifactId>morphia</artifactId>
+    <version>1.2.2</version>
+</dependency>
+	<!-- EIS Entity -->
+	<dependency>
+	<groupId>com.gigsky.raptor</groupId>
+	<artifactId>eis-entity</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	</dependency>
+  </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.1.0</version>
+				<configuration>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+					<transformers>
+						<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+						<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+							<manifestEntries>
+								<Main-Class>${app.mainClass}</Main-Class>
+							</manifestEntries>
+						</transformer>
+					</transformers>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

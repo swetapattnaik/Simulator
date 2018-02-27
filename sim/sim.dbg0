@@ -1,0 +1,444 @@
+00:46:31 main: main() simulator started
+00:46:34    main: DeliveryInfoSender.start() entered
+00:46:34    DlvrInfoSender-1: DeliveryInfoSender.run() entered
+00:46:34    main: DeliveryInfoSender.start() exited
+00:46:34    main: main() going to parse from input stream
+00:46:34    main: main() got comment line # This is an example of user definition file used to authenticate bounding ESME.
+00:46:34    main: main() got comment line # User consists from attributes, each attribute is on one line,
+00:46:34    main: main() got comment line # each attribute has key and value; users are delimited by one or more
+00:46:34    main: main() got comment line # consecutive blank lines - next user is started by the next attribute after
+00:46:34    main: main() got comment line # first occurence of blank line.
+00:46:34    main: main() got comment line # Comment line can appear anywhere and it's ignored => it can't delimit
+00:46:34    main: main() got comment line # two users.
+00:46:34    main: main() got comment line # Format of attribute is <name>"="<value>
+00:46:34    main: main() got comment line #
+00:46:34    main: main() got comment line # The name and password attributes are compulsory for each user definition
+00:46:34    main: main() got comment line # as they are compared to the system_id and password parameters
+00:46:34    main: main() got comment line # in the incoming bound PDU.
+00:46:34    main: main() got comment line #
+00:46:34    main: main() got comment line # Note that timeout and bound attributes below are just exampples
+00:46:34    main: main() got comment line # of additional attributes and aren't really used by the simulator :-)
+00:46:34    main: main() got comment line # (future expansion?)
+00:46:34    main: main() got comment line # Also note that whitespaces aren't removed from neither attribute name
+00:46:34    main: main() got comment line # and it's value, i.e. "name=peter" and "name= peter" define two different users,
+00:46:34    main: main() got comment line # "peter" and " peter".
+00:46:34    main: main() got empty line
+00:46:34    main: main() got empty line
+00:46:34    main: main() got empty line
+00:46:34    main: main() got comment line # Sweta can bound for unlimited time as any type
+00:46:34    main: main() going to parse attribute name=sweta
+00:46:34    main: main() going to parse attribute password=sweta123
+00:46:34    main: main() going to parse attribute timeout=unlimited
+00:46:34    main: main() got empty line
+00:46:34    main: main() finished record, adding to table
+00:46:34    main: main() got comment line # Pavel can bound for unlimited time as any type
+00:46:34    main: main() going to parse attribute name=pavel
+00:46:34    main: main() going to parse attribute password=dfsew
+00:46:34    main: main() going to parse attribute timeout=unlimited
+00:46:34    main: main() got empty line
+00:46:34    main: main() finished record, adding to table
+00:46:34    main: main() got empty line
+00:46:34    main: main() got comment line # Jorge has time limited to 10, then the connection is dropped
+00:46:34    main: main() got comment line # if enquire is unsuccessfull
+00:46:34    main: main() got comment line # Also, Jorge can connect only as triansmitter or receiver, he can't
+00:46:34    main: main() got comment line # connect as transciever
+00:46:34    main: main() got empty line
+00:46:34    main: main() going to parse attribute name=jorge
+00:46:34    main: main() going to parse attribute password=prtgljrg
+00:46:34    main: main() got comment line # And this timeout is in minutes, bad luck, jorge %^)
+00:46:34    main: main() going to parse attribute timout=5
+00:46:34    main: main() going to parse attribute bound=t,r
+00:46:34    main: main() got empty line
+00:46:34    main: main() finished record, adding to table
+00:46:34    main: main() got comment line # And another users
+00:46:34    main: main() going to parse attribute name=hugo
+00:46:34    main: main() going to parse attribute password=ggoohu
+00:46:34    main: main() got empty line
+00:46:34    main: main() finished record, adding to table
+00:46:34    main: main() got comment line # that's all folks
+00:46:34    main: main() going to parse attribute name=DAMIEN
+00:46:34    main: main() going to parse attribute password=neimad
+00:46:34    main: main() got empty line
+00:46:34    main: main() finished record, adding to table
+00:46:34    main: main() going to start SMSCListener on port 2018
+00:46:34       main: TCPIPConnection.open entered
+00:46:34       main: TCPIPConnection.open listening tcp/ip on port 2018 (7)
+00:46:34       main: TCPIPConnection.open exited
+00:46:34    main: main() starting listener in separate thread.
+00:46:34    main: main() listener started in separate thread.
+00:46:34    Thread-1: SMSCListenerImpl.run of SMSCListener on port 2018 entered
+00:46:34       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:46:34          Thread-1: TCPIPConnection.receive entered
+00:46:38          Thread-1: TCPIPConnection.receive exited
+00:46:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 SMSCListener accepted a connection on port 2018
+00:46:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 SMSCListener launched a session on the accepted connection.
+00:46:38    Thread-2: SMSCSessionImpl.SMSCSession run() entered
+00:46:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:46:38    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession starting receiver
+00:46:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:46:38    Thread-2: SMSCSessionImpl.SMSCSession run() Receiver starting (1)
+00:46:38       Thread-2: Receiver.start() entered
+00:46:38          Thread-1: TCPIPConnection.receive entered
+00:46:38    Receiver-1: Receiver.run() entered
+00:46:38    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+00:46:38    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+00:46:38       Receiver-1: TCPIPConnection.receive entered
+00:46:38       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+00:46:38       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+00:46:38       Receiver-1: TCPIPConnection.receive read 36 bytes from socket (8)
+00:46:38       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+00:46:38       Receiver-1: TCPIPConnection.receive totally read 36 bytes from socket (7)
+00:46:38       Receiver-1: TCPIPConnection.receive exited
+00:46:38    Receiver-1: Receiver.run() trying to create pdu from unprocessed buffer (1)
+00:46:38    Receiver-1: Receiver.run() PDU.setData() parsing header 0000002400000002000000000000006f (5)
+00:46:38    Receiver-1: Receiver.run() PDU.setData() parsing body 7377657461007377657461313233000034000000 (5)
+00:46:38    Receiver-1: Receiver.run() received complete pdu(bindreq: (pdu: 36 2 0 111) sweta sweta123  52 (addrrang: 0 0 ) )  (1)
+00:46:38    Receiver-1: Receiver.run() there is 0 bytes left in unprocessed buffer (1)
+00:46:38    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+00:46:38    Receiver-1: Receiver.run() Receiver.receiveAsync(): PDU received, processing (bindreq: (pdu: 36 2 0 111) sweta sweta123  52 (addrrang: 0 0 ) )  (1)
+00:46:38    Receiver-1: Receiver.run() receiver enqueuing pdu. (1)
+00:46:38    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+00:46:38    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+00:46:38       Receiver-1: TCPIPConnection.receive entered
+00:46:38       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+00:46:38       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+00:46:39       Thread-2: Receiver.start() exited
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() Receiver started (1)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to receive a PDU
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() receivePDU: Going to receive response. (1)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() Got pdu (bindreq: (pdu: 36 2 0 111) sweta sweta123  52 (addrrang: 0 0 ) )  (1)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession got request (bindreq: (pdu: 36 2 0 111) sweta sweta123  52 (addrrang: 0 0 ) ) 
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SimulatorPDUProcessor.clientRequest() (bindreq: (pdu: 36 2 0 111) sweta sweta123  52 (addrrang: 0 0 ) ) 
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() system id sweta authenticated
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SimulatorPDUProcessor.serverResponse() (bindresp: (pdu: 0 80000002 0 111) Smsc Simulator) 
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to send pdu over transmitter
+00:46:39       Thread-2: Transmitter.send entered
+00:46:39       Thread-2: Transmitter.send going to send pdu's data over connection (7)
+00:46:39       Thread-2: Transmitter.send PDU.getData() build up data 0000001f80000002000000000000006f536d73632053696d756c61746f7200 (5)
+00:46:39          Thread-2: TCPIPConnection.send entered
+00:46:39          Thread-2: TCPIPConnection.send sent 31 bytes to 127.0.0.1 on port 52672 (7)
+00:46:39          Thread-2: TCPIPConnection.send exited
+00:46:39       Thread-2: Transmitter.send successfully sent pdu's data over connection (7)
+00:46:39       Thread-2: Transmitter.send exited
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession pdu sent over transmitter
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to receive a PDU
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() receivePDU: Going to receive response. (1)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:46:39       Receiver-1: TCPIPConnection.receive read 333 bytes from socket (8)
+00:46:39       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+00:46:39       Receiver-1: TCPIPConnection.receive totally read 333 bytes from socket (7)
+00:46:39       Receiver-1: TCPIPConnection.receive exited
+00:46:39    Receiver-1: Receiver.run() trying to create pdu from unprocessed buffer (1)
+00:46:39    Receiver-1: Receiver.run() PDU.setData() parsing header 0000014d000000040000000000000070 (5)
+00:46:39    Receiver-1: Receiver.run() PDU.setData() parsing body 0000000005003730323230333336333200000000000001000001210130783330203078333820307833302030783336203078303420307830432030783331203078333020307832452030783332203078333020307833342030783245203078333220307833332030783335203078324520307833372030783034203078303420307833312030783334203078333420307833332030783034203078323020307832462030783733203078364420307837332030783732203078324420307837332030783635203078373220307837362030783639203078363320307836352030783246203078373320307836352030783732203078373620307836352030783732203078324620307836312030783634203078364420307836392030783645203078363120307836372030783635203078364520307837342030783246 (5)
+00:46:39    Receiver-1: Receiver.run() received complete pdu(submit: (pdu: 333 4 0 112) (addr: 0 0 )  (addr: 5 0 7022033632)  (sm: msg: 0x30 0x38 0x30 0x36 0x04 0x0C 0x31 0x30 0x2E 0x32 0x30 0x34 0x2E 0x32 0x33 0x35 0x2E 0x37 0x04 0x04 0x31 0x34 0x34 0x33 0x04 0x20 0x2F 0x73 0x6D 0x73 0x72 0x2D 0x73 0x65 0x72 0x76 0x69 0x63 0x65 0x2F 0x73 0x65 0x72 0x76 0x65 0x72 0x2F 0x61 0x64 0x6D 0x69 0x6E 0x61 0x67 0x65 0x6E 0x74 0x2F)  (opt: ) )  (1)
+00:46:39    Receiver-1: Receiver.run() there is 0 bytes left in unprocessed buffer (1)
+00:46:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+00:46:39    Receiver-1: Receiver.run() Receiver.receiveAsync(): PDU received, processing (submit: (pdu: 333 4 0 112) (addr: 0 0 )  (addr: 5 0 7022033632)  (sm: msg: 0x30 0x38 0x30 0x36 0x04 0x0C 0x31 0x30 0x2E 0x32 0x30 0x34 0x2E 0x32 0x33 0x35 0x2E 0x37 0x04 0x04 0x31 0x34 0x34 0x33 0x04 0x20 0x2F 0x73 0x6D 0x73 0x72 0x2D 0x73 0x65 0x72 0x76 0x69 0x63 0x65 0x2F 0x73 0x65 0x72 0x76 0x65 0x72 0x2F 0x61 0x64 0x6D 0x69 0x6E 0x61 0x67 0x65 0x6E 0x74 0x2F)  (opt: ) )  (1)
+00:46:39    Receiver-1: Receiver.run() receiver enqueuing pdu. (1)
+00:46:39    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:46:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() Got pdu (submit: (pdu: 333 4 0 112) (addr: 0 0 )  (addr: 5 0 7022033632)  (sm: msg: 0x30 0x38 0x30 0x36 0x04 0x0C 0x31 0x30 0x2E 0x32 0x30 0x34 0x2E 0x32 0x33 0x35 0x2E 0x37 0x04 0x04 0x31 0x34 0x34 0x33 0x04 0x20 0x2F 0x73 0x6D 0x73 0x72 0x2D 0x73 0x65 0x72 0x76 0x69 0x63 0x65 0x2F 0x73 0x65 0x72 0x76 0x65 0x72 0x2F 0x61 0x64 0x6D 0x69 0x6E 0x61 0x67 0x65 0x6E 0x74 0x2F)  (opt: ) )  (1)
+00:46:39       Receiver-1: TCPIPConnection.receive entered
+00:46:39       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession got request (submit: (pdu: 333 4 0 112) (addr: 0 0 )  (addr: 5 0 7022033632)  (sm: msg: 0x30 0x38 0x30 0x36 0x04 0x0C 0x31 0x30 0x2E 0x32 0x30 0x34 0x2E 0x32 0x33 0x35 0x2E 0x37 0x04 0x04 0x31 0x34 0x34 0x33 0x04 0x20 0x2F 0x73 0x6D 0x73 0x72 0x2D 0x73 0x65 0x72 0x76 0x69 0x63 0x65 0x2F 0x73 0x65 0x72 0x76 0x65 0x72 0x2F 0x61 0x64 0x6D 0x69 0x6E 0x61 0x67 0x65 0x6E 0x74 0x2F)  (opt: ) ) 
+00:46:39       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SimulatorPDUProcessor.clientRequest() (submit: (pdu: 333 4 0 112) (addr: 0 0 )  (addr: 5 0 7022033632)  (sm: msg: 0x30 0x38 0x30 0x36 0x04 0x0C 0x31 0x30 0x2E 0x32 0x30 0x34 0x2E 0x32 0x33 0x35 0x2E 0x37 0x04 0x04 0x31 0x34 0x34 0x33 0x04 0x20 0x2F 0x73 0x6D 0x73 0x72 0x2D 0x73 0x65 0x72 0x76 0x69 0x63 0x65 0x2F 0x73 0x65 0x72 0x76 0x65 0x72 0x2F 0x61 0x64 0x6D 0x69 0x6E 0x61 0x67 0x65 0x6E 0x74 0x2F)  (opt: ) ) 
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SimulatorPDUProcessor.serverResponse() (submit_resp: (pdu: 0 80000004 0 112) Smsc2001 ) 
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to send pdu over transmitter
+00:46:39       Thread-2: Transmitter.send entered
+00:46:39       Thread-2: Transmitter.send going to send pdu's data over connection (7)
+00:46:39       Thread-2: Transmitter.send PDU.getData() build up data 00000019800000040000000000000070536d73633230303100 (5)
+00:46:39          Thread-2: TCPIPConnection.send entered
+00:46:39          Thread-2: TCPIPConnection.send sent 25 bytes to 127.0.0.1 on port 52672 (7)
+00:46:39          Thread-2: TCPIPConnection.send exited
+00:46:39       Thread-2: Transmitter.send successfully sent pdu's data over connection (7)
+00:46:39       Thread-2: Transmitter.send exited
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession pdu sent over transmitter
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to receive a PDU
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() receivePDU: Going to receive response. (1)
+00:46:39    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:46:44       DlvrInfoSender-1: DeliveryInfoSender.deliver entered
+00:46:44       DlvrInfoSender-1: DeliveryInfoSender.deliver SimulatorPDUProcessor.serverRequest() (deliver: (pdu: 0 5 0 [1]) (addr: 5 0 7022033632)  (addr: 5 0 7022033632)  (sm: enc: X-Gsm7Bit msg: id:Smsc2001 sub:1 dlvrd:1 submit date:1802271246 done date:1802271246 stat:DELIVRD err:0 text:0x30 0x38 0x30 0x36 )  (opt: ) ) 
+00:46:44       DlvrInfoSender-1: DeliveryInfoSender.deliver SMSCSession going to send pdu over transmitter
+00:46:44          DlvrInfoSender-1: Transmitter.send entered
+00:46:44          DlvrInfoSender-1: Transmitter.send going to send pdu's data over connection (7)
+00:46:44          DlvrInfoSender-1: Transmitter.send PDU.getData() build up data 000000a70000000500000000000000010005003730323230333336333200050037303232303333363332000400000000000003007269643a536d736332303031207375623a3120646c7672643a31207375626d697420646174653a3138303232373132343620646f6e6520646174653a3138303232373132343620737461743a44454c49565244206572723a3020746578743a3078333020307833382030783330203078333620 (5)
+00:46:44             DlvrInfoSender-1: TCPIPConnection.send entered
+00:46:44             DlvrInfoSender-1: TCPIPConnection.send sent 167 bytes to 127.0.0.1 on port 52672 (7)
+00:46:44             DlvrInfoSender-1: TCPIPConnection.send exited
+00:46:44          DlvrInfoSender-1: Transmitter.send successfully sent pdu's data over connection (7)
+00:46:44          DlvrInfoSender-1: Transmitter.send exited
+00:46:44       DlvrInfoSender-1: DeliveryInfoSender.deliver SMSCSession pdu sent over transmitter
+00:46:44       DlvrInfoSender-1: DeliveryInfoSender.deliver exited
+00:46:49    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:46:59    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:47:09    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:47:19    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:47:29    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:47:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:47:38          Thread-1: TCPIPConnection.receive exited
+00:47:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:47:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:47:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:47:38          Thread-1: TCPIPConnection.receive entered
+00:47:39       Receiver-1: TCPIPConnection.receive timeout reading from socket (8)
+00:47:39       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+00:47:39       Receiver-1: TCPIPConnection.receive totally read 0 bytes from socket (7)
+00:47:39       Receiver-1: TCPIPConnection.receive exited
+00:47:39    Receiver-1: Receiver.run() no data received this time. (3)
+00:47:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+00:47:39    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+00:47:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+00:47:39       Receiver-1: TCPIPConnection.receive entered
+00:47:39       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+00:47:39       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+00:47:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to receive a PDU
+00:47:39    Thread-2: SMSCSessionImpl.SMSCSession run() receivePDU: Going to receive response. (1)
+00:47:39    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:47:49    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:47:59    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:48:09    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:48:19    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:48:29    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:48:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:48:38          Thread-1: TCPIPConnection.receive exited
+00:48:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:48:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:48:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:48:38          Thread-1: TCPIPConnection.receive entered
+00:48:39       Receiver-1: TCPIPConnection.receive timeout reading from socket (8)
+00:48:39       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+00:48:39       Receiver-1: TCPIPConnection.receive totally read 0 bytes from socket (7)
+00:48:39       Receiver-1: TCPIPConnection.receive exited
+00:48:39    Receiver-1: Receiver.run() no data received this time. (3)
+00:48:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+00:48:39    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+00:48:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+00:48:39       Receiver-1: TCPIPConnection.receive entered
+00:48:39       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+00:48:39       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+00:48:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to receive a PDU
+00:48:39    Thread-2: SMSCSessionImpl.SMSCSession run() receivePDU: Going to receive response. (1)
+00:48:39    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:48:49    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:48:59    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:49:09    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:49:19    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:49:29    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:49:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:49:38          Thread-1: TCPIPConnection.receive exited
+00:49:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:49:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:49:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:49:38          Thread-1: TCPIPConnection.receive entered
+00:49:39       Receiver-1: TCPIPConnection.receive timeout reading from socket (8)
+00:49:39       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+00:49:39       Receiver-1: TCPIPConnection.receive totally read 0 bytes from socket (7)
+00:49:39       Receiver-1: TCPIPConnection.receive exited
+00:49:39    Receiver-1: Receiver.run() no data received this time. (3)
+00:49:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+00:49:39    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+00:49:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+00:49:39       Receiver-1: TCPIPConnection.receive entered
+00:49:39       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+00:49:39       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+00:49:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to receive a PDU
+00:49:39    Thread-2: SMSCSessionImpl.SMSCSession run() receivePDU: Going to receive response. (1)
+00:49:39    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:49:49    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:49:59    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:50:09    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:50:19    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:50:29    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:50:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:50:38          Thread-1: TCPIPConnection.receive exited
+00:50:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:50:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:50:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:50:38          Thread-1: TCPIPConnection.receive entered
+00:50:39       Receiver-1: TCPIPConnection.receive timeout reading from socket (8)
+00:50:39       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+00:50:39       Receiver-1: TCPIPConnection.receive totally read 0 bytes from socket (7)
+00:50:39       Receiver-1: TCPIPConnection.receive exited
+00:50:39    Receiver-1: Receiver.run() no data received this time. (3)
+00:50:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+00:50:39    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+00:50:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+00:50:39       Receiver-1: TCPIPConnection.receive entered
+00:50:39       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+00:50:39       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+00:50:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to receive a PDU
+00:50:39    Thread-2: SMSCSessionImpl.SMSCSession run() receivePDU: Going to receive response. (1)
+00:50:39    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:50:49    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:50:59    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:51:09    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:51:19    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:51:29    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:51:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:51:38          Thread-1: TCPIPConnection.receive exited
+00:51:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:51:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:51:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:51:38          Thread-1: TCPIPConnection.receive entered
+00:51:39       Receiver-1: TCPIPConnection.receive timeout reading from socket (8)
+00:51:39       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+00:51:39       Receiver-1: TCPIPConnection.receive totally read 0 bytes from socket (7)
+00:51:39       Receiver-1: TCPIPConnection.receive exited
+00:51:39    Receiver-1: Receiver.run() no data received this time. (3)
+00:51:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+00:51:39    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+00:51:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+00:51:39       Receiver-1: TCPIPConnection.receive entered
+00:51:39       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+00:51:39       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+00:51:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession going to receive a PDU
+00:51:39    Thread-2: SMSCSessionImpl.SMSCSession run() receivePDU: Going to receive response. (1)
+00:51:39    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:51:49    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:51:59    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:52:09    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:52:19    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:52:29    Thread-2: SMSCSessionImpl.SMSCSession run() Is receiver/transciever => trying to get from queue. (3)
+00:52:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:52:38          Thread-1: TCPIPConnection.receive exited
+00:52:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:52:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:52:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:52:38          Thread-1: TCPIPConnection.receive entered
+00:52:39       Receiver-1: TCPIPConnection.receive timeout reading from socket (8)
+00:52:39       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+00:52:39       Receiver-1: TCPIPConnection.receive totally read 0 bytes from socket (7)
+00:52:39       Receiver-1: TCPIPConnection.receive exited
+00:52:39    Receiver-1: Receiver.run() no data received this time. (3)
+00:52:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+00:52:39    Receiver-1: Receiver.run() Receiver.receiveAsync() going to receive pdu. (3)
+00:52:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection start (3)
+00:52:39       Receiver-1: TCPIPConnection.receive entered
+00:52:39       Receiver-1: TCPIPConnection.receive going to read from socket (8)
+00:52:39       Receiver-1: TCPIPConnection.receive comms timeout=60000 receive timeout=10000 receive buffer size=4096 (8)
+00:52:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession stoped due to inactivity
+00:52:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession stopping
+00:52:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession stopping receiver
+00:52:39    Thread-2: SMSCSessionImpl.SMSCSession run() Receiver stoping (1)
+00:52:39       Thread-2: Receiver.stop() entered
+00:53:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:53:38          Thread-1: TCPIPConnection.receive exited
+00:53:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:53:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:53:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:53:38          Thread-1: TCPIPConnection.receive entered
+00:53:39       Receiver-1: TCPIPConnection.receive timeout reading from socket (8)
+00:53:39       Receiver-1: TCPIPConnection.receive no more data remains in the socket (8)
+00:53:39       Receiver-1: TCPIPConnection.receive totally read 0 bytes from socket (7)
+00:53:39       Receiver-1: TCPIPConnection.receive exited
+00:53:39    Receiver-1: Receiver.run() no data received this time. (3)
+00:53:39    Receiver-1: Receiver.run() ReceiverBase.receivePDUFromConnection finished (3)
+00:53:39    Receiver-1: Receiver.run() exited
+00:53:39       Thread-2: Receiver.stop() exited
+00:53:39    Thread-2: SMSCSessionImpl.SMSCSession run() Receiver stoped (1)
+00:53:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession exiting PDUProcessor
+00:53:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession closing connection
+00:53:39       Thread-2: TCPIPConnection.close entered
+00:53:39       Thread-2: TCPIPConnection.close closed client tcp/ip connection to 127.0.0.1 on port 52672 (7)
+00:53:39       Thread-2: TCPIPConnection.close exited
+00:53:39    Thread-2: SMSCSessionImpl.SMSCSession run() SMSCSession exiting run()
+00:53:39    Thread-2: SMSCSessionImpl.SMSCSession run() exited
+00:54:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:54:38          Thread-1: TCPIPConnection.receive exited
+00:54:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:54:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:54:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:54:38          Thread-1: TCPIPConnection.receive entered
+00:55:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:55:38          Thread-1: TCPIPConnection.receive exited
+00:55:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:55:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:55:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:55:38          Thread-1: TCPIPConnection.receive entered
+00:56:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:56:38          Thread-1: TCPIPConnection.receive exited
+00:56:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:56:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:56:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:56:38          Thread-1: TCPIPConnection.receive entered
+00:57:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:57:38          Thread-1: TCPIPConnection.receive exited
+00:57:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:57:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:57:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:57:38          Thread-1: TCPIPConnection.receive entered
+00:58:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:58:38          Thread-1: TCPIPConnection.receive exited
+00:58:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:58:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:58:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:58:38          Thread-1: TCPIPConnection.receive entered
+00:59:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+00:59:38          Thread-1: TCPIPConnection.receive exited
+00:59:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+00:59:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+00:59:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+00:59:38          Thread-1: TCPIPConnection.receive entered
+01:00:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:00:38          Thread-1: TCPIPConnection.receive exited
+01:00:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:00:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:00:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+01:00:38          Thread-1: TCPIPConnection.receive entered
+01:01:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:01:38          Thread-1: TCPIPConnection.receive exited
+01:01:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:01:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:01:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+01:01:38          Thread-1: TCPIPConnection.receive entered
+01:02:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:02:38          Thread-1: TCPIPConnection.receive exited
+01:02:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:02:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:02:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+01:02:38          Thread-1: TCPIPConnection.receive entered
+01:03:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:03:38          Thread-1: TCPIPConnection.receive exited
+01:03:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:03:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:03:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+01:03:38          Thread-1: TCPIPConnection.receive entered
+01:04:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:04:38          Thread-1: TCPIPConnection.receive exited
+01:04:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:04:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:04:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+01:04:38          Thread-1: TCPIPConnection.receive entered
+01:05:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:05:38          Thread-1: TCPIPConnection.receive exited
+01:05:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:05:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:05:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+01:05:38          Thread-1: TCPIPConnection.receive entered
+01:06:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:06:38          Thread-1: TCPIPConnection.receive exited
+01:06:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:06:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:06:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+01:06:38          Thread-1: TCPIPConnection.receive entered
+01:07:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:07:38          Thread-1: TCPIPConnection.receive exited
+01:07:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:07:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:07:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+01:07:38          Thread-1: TCPIPConnection.receive entered
+01:08:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:08:38          Thread-1: TCPIPConnection.receive exited
+01:08:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:08:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:08:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
+01:08:38          Thread-1: TCPIPConnection.receive entered
+01:09:38          Thread-1: TCPIPConnection.receive Exception accepting socket (timeout?)java.net.SocketTimeoutException: Accept timed out (8)
+01:09:38          Thread-1: TCPIPConnection.receive exited
+01:09:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 no connection accepted this time. (18)
+01:09:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 exited
+01:09:38       Thread-1: SMSCListenerImpl.SMSCListener listening on port 2018 entered
